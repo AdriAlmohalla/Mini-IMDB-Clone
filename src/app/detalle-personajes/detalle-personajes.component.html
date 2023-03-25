@@ -1,0 +1,31 @@
+<div class="card my-3 px-4 container p-3" style="max-width: 80%;" *ngIf="infoPersonaje else bloqueSinPersonaje">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img [src]="infoPersonaje.imagen" class="img-fluid rounded" [alt]="'Imagen del personaje: ' + infoPersonaje.nombre_real">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">{{infoPersonaje.nombre_real}}</h5>
+        <p class="card-text"> Nombre del personaje: {{infoPersonaje.nombre_personaje}}</p>
+        <p class="card-text"> El personaje aparece en {{infoPersonaje.episodios}} episodios</p>
+        <!-- <p class="card-text"> Canal: {{infoPersonaje.canal}}</p> -->
+        <!-- <div class="d-flex gap-2">
+          <button class="btn btn-primary" (click)="goToPersonajes()">Personajes</button>
+          <button class="btn btn-secondary" [routerLink]="['/serie', urlPadre, 'temporadas']">Temporadas</button>
+        </div> -->
+          <!-- <router-outlet></router-outlet> -->
+        <div class="listado-serie">
+          <app-detalle-listado [imagen]="serie.imagen" [texto]="serie.titulo" [id]="serie.id" url="/serie">
+          </app-detalle-listado>
+        </div>
+        <div>
+          <a [routerLink]="['/personajes']">Volver al listado de personajes</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ng-template #bloqueSinPersonaje>
+  El personaje no existe
+</ng-template>

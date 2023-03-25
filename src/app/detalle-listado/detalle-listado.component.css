@@ -1,0 +1,14 @@
+figure {
+  cursor: pointer;
+  animation: transicion 2s ease;
+}
+
+figure img {
+  /* max-width: 10rem; */
+  max-height: 13rem;
+}
+
+@keyframes transicion {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}

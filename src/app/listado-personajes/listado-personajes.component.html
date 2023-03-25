@@ -1,0 +1,9 @@
+<div class="container d-flex gap-3 flex-wrap justify-content-center mt-4">
+  <!-- Seria mejor pasar todo el objeto series al componente detalle, pero por practicar esta bien -->
+  <app-detalle-listado *ngFor="let personaje of listadoPersonajes"
+  [imagen]="personaje.imagen"
+  [texto]="personaje.nombre_real"
+  [id]="personaje.id"
+  url="/personaje">
+  </app-detalle-listado>
+</div>

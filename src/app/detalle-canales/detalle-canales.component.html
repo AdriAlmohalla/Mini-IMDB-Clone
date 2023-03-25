@@ -1,0 +1,12 @@
+<div class="container d-flex gap-3 flex-wrap justify-content-center mt-4">
+  <!-- Seria mejor pasar todo el objeto series al componente detalle, pero por practicar esta bien -->
+  <app-detalle-listado *ngFor="let serie of listaDeSeries"
+  [imagen]="serie.imagen"
+  [texto]="serie.titulo"
+  [id]="serie.id"
+  url="/serie">
+  </app-detalle-listado>
+</div>
+<div class="container">
+  <a [routerLink]="['/canales']">Volver a la lista de canales</a>
+</div>

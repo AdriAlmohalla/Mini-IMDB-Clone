@@ -1,0 +1,3 @@
+<div class="container">
+  <div *ngFor="let canal of listadoCanales" class="canal" [routerLink]="['/canales', canal.nombreUrl]">{{canal.canal}}</div>
+</div>

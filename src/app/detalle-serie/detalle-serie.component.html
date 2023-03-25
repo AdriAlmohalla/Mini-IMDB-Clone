@@ -1,0 +1,30 @@
+<div class="card my-3 px-4 container p-3" style="max-width: 80%;" *ngIf="infoSerie else bloqueSinSerie">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img [src]="infoSerie.imagen" class="img-fluid rounded" [alt]="'Imagen de la serie' + infoSerie.titulo">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">{{infoSerie.titulo}}</h5>
+        <p class="card-text"> Series creadad por: {{infoSerie.creador}}</p>
+        <p class="card-text"> Fechas {{infoSerie.fechas}}</p>
+        <p class="card-text"> Rating: {{infoSerie.rating}}</p>
+        <a class="card-text" [routerLink]="['/canales', infoSerie.canal.split(' ').join('-')]"> Canal: {{infoSerie.canal}}</a>
+        <div class="d-flex gap-2 mt-2">
+          <button class="btn btn-secondary" [routerLink]="['/serie', urlPadre, 'personajes']">Personajes</button>
+          <button class="btn btn-secondary" [routerLink]="['/serie', urlPadre, 'temporadas']">Temporadas</button>
+        </div>
+        <div class="mas-info listado-personajes">
+          <router-outlet></router-outlet>
+        </div>
+        <div>
+          <a [routerLink]="['/series']">Volver</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ng-template #bloqueSinSerie>
+  La serie solicitada no existe
+</ng-template>
